@@ -32,43 +32,38 @@
         .hero-text { padding: 0 25px; text-align: center; margin-bottom: 60px; }
         .hero-text h1 { font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 400; text-transform: uppercase; margin-bottom: 15px; letter-spacing: -1px; }
 
-        /* --- GENERAL SECTION STYLES --- */
+        /* --- SECTIONS --- */
         section { padding: 60px 25px; }
         h2 { font-family: 'Playfair Display', serif; font-size: 26px; text-align: center; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 2px; color: var(--mocha-deep); }
         .text-box { text-align: center; max-width: 600px; margin: 0 auto; line-height: 1.8; opacity: 0.8; }
         .btn-text { display: inline-block; margin-top: 20px; font-size: 12px; font-weight: 600; text-transform: uppercase; border-bottom: 1px solid; text-decoration: none; color: inherit; transition: 0.3s; }
         .btn-text:hover { color: var(--mint-soft); border-color: var(--mint-soft); }
 
-        /* --- THE 3 SYMBOLS (Emojs in perfekter Größe) --- */
-        .symbol-row { display: flex; justify-content: space-around; padding: 50px 0; text-align: center; gap: 15px; }
+        /* --- THE 3 SYMBOLS (Jetzt doppelt so groß) --- */
+        .symbol-row { display: flex; justify-content: space-around; padding: 60px 0; text-align: center; gap: 15px; }
         .symbol-item { flex: 1; display: flex; flex-direction: column; align-items: center; }
-        /* Emoji Größe auf 40px gesetzt, wie gewünscht */
-        .symbol-icon { font-size: 40px; margin-bottom: 15px; display: block; }
-        .symbol-item span { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; opacity: 0.7; }
+        .symbol-icon { font-size: 80px; margin-bottom: 20px; display: block; } /* Doppelt so groß wie vorher */
+        .symbol-item span { font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 600; opacity: 0.7; }
 
-        /* --- REZENSIONEN (Mit cleanem Link) --- */
+        /* --- REZENSIONEN --- */
         .review-section { background-color: #f1ede4; }
-        .review-box { background: white; padding: 30px; border-radius: 4px; margin-bottom: 20px; box-shadow: 0 5px 25px rgba(0,0,0,0.02); max-width: 600px; margin-left: auto; margin-right: auto; text-align: center;}
-        .review-box p { font-size: 14px; line-height: 1.8; opacity: 0.9; text-align: left;}
-        
-        /* Neuer Stil für den Rezensions-Button: Cleaner Strich */
+        .review-box { background: white; padding: 30px; border-radius: 4px; margin-bottom: 20px; box-shadow: 0 5px 25px rgba(0,0,0,0.02); max-width: 600px; margin-left: auto; margin-right: auto; }
+        .review-box p { font-size: 14px; line-height: 1.8; opacity: 0.9; }
         .review-btn-container { text-align: center; margin-top: 30px; }
         .review-btn { display: inline-block; font-size: 12px; font-weight: 600; text-transform: uppercase; text-decoration: none; color: inherit; border-bottom: 1px solid; transition: 0.3s; }
         .review-btn:hover { color: var(--mint-soft); border-color: var(--mint-soft); }
 
         /* --- MAP --- */
-        .map-container { width: 100%; height: 350px; border-radius: 4px; overflow: hidden; margin-top: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); border: 1px solid #eee; }
-        iframe { width: 100%; height: 100%; border: none; filter: grayscale(0.2) contrast(0.9); }
+        .map-container { width: 100%; height: 400px; border-radius: 4px; overflow: hidden; margin-top: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); border: 1px solid #eee; }
+        iframe { width: 100%; height: 100%; border: none; filter: grayscale(0.1); }
 
-        /* --- ULTRACLEAN FOOTER --- */
+        /* --- FOOTER --- */
         footer { background: white; padding: 100px 25px 50px; text-align: center; border-top: 1px solid #eee; }
         .footer-insta { text-decoration: none; color: var(--mocha-deep); display: inline-flex; flex-direction: column; align-items: center; gap: 15px; margin-bottom: 60px; }
         .insta-circle { width: 70px; height: 70px; border: 1px solid #ddd; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: 0.3s; }
         .insta-icon { width: 30px; height: 30px; fill: var(--mocha-deep); transition: 0.3s; }
-        
         .footer-insta:hover .insta-circle { background: var(--bg-warm); border-color: var(--mint-soft); }
         .footer-insta:hover .insta-icon { fill: var(--mint-soft); }
-        
         .insta-text { font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-top: 5px; }
         .footer-credits { font-size: 10px; opacity: 0.4; letter-spacing: 1px; line-height: 2; text-transform: uppercase; }
     </style>
@@ -136,7 +131,7 @@
         <h2>Find us in Wolfenbüttel</h2>
         <p style="text-align: center; font-size: 14px; margin-bottom: 20px; opacity: 0.6;">Okerstraße 3, 38300 Wolfenbüttel</p>
         <div class="map-container">
-            <iframe src="http://googleusercontent.com/maps.google.com/4" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2441.748375837648!2d10.534888277209724!3d52.16173257196621!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a56108151f158d%3A0x286392576b51c1be!2sOkerstra%C3%9Fe%203%2C%2038300%20Wolfenb%C3%BCttel!5e0!3m2!1sde!2sde!4v1714343114948!5m2!1sde!2sde" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </section>
 
