@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menü | mint & mocha</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg-warm: #f9f7f2; --mint-soft: #98c1b9; --mocha-deep: #3d2b1f; --dusty-pink: #c9ada7; --glass: rgba(255, 255, 255, 0.9); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-warm); color: var(--mocha-deep); }
+        header { position: sticky; top: 0; background: var(--glass); backdrop-filter: blur(10px); display: flex; justify-content: space-between; align-items: center; padding: 15px 25px; z-index: 1000; border-bottom: 1px solid rgba(0,0,0,0.05); }
+        .logo { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; text-decoration: none; color: inherit; }
+        .menu-icon { font-size: 24px; cursor: pointer; }
+        #nav-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg-warm); z-index: 2000; display: none; flex-direction: column; align-items: center; justify-content: center; }
+        #nav-overlay a { font-family: 'Playfair Display', serif; font-size: 32px; text-decoration: none; color: var(--mocha-deep); margin: 20px 0; }
+        .close-menu { position: absolute; top: 25px; right: 25px; font-size: 30px; cursor: pointer; }
+        
+        section { padding: 40px 25px; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 36px; margin-bottom: 30px; text-align: center; color: var(--mint-soft); }
+        .menu-category { margin-bottom: 40px; }
+        .category-title { font-family: 'Playfair Display', serif; font-size: 20px; text-transform: uppercase; border-bottom: 1px solid var(--mint-soft); padding-bottom: 5px; margin-bottom: 15px; letter-spacing: 2px; }
+        .menu-item { display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 14px; }
+        .price { font-weight: 600; }
+    </style>
+</head>
+<body>
+    <div id="nav-overlay"><span class="close-menu" onclick="toggleMenu()">✕</span><a href="index.html">Home</a><a href="menue.html">Speisekarte</a><a href="rezensionen.html">Rezensionen</a><a href="geschichte.html">Unsere Geschichte</a></div>
+    <header><a href="index.html" class="logo">mint & mocha</a><div class="menu-icon" onclick="toggleMenu()">☰</div></header>
+
+    <section>
+        <h1>Speisekarte</h1>
+        <div class="menu-category">
+            <div class="category-title">Matcha</div>
+            <div class="menu-item"><span>Matcha Latte</span> <span class="price">4,50€</span></div>
+            <div class="menu-item"><span>Iced Matcha Latte</span> <span class="price">6,20€</span></div>
+            <div class="menu-item"><span>Strawberry Matcha</span> <span class="price">6,80€</span></div>
+            <div class="menu-item"><span>Mango Matcha</span> <span class="price">6,80€</span></div>
+        </div>
+        <div class="menu-category">
+            <div class="category-title">Iced Coffee</div>
+            <div class="menu-item"><span>Iced Latte</span> <span class="price">4,40€</span></div>
+            <div class="menu-item"><span>Iced Caramel Latte</span> <span class="price">5,20€</span></div>
+        </div>
+        <div class="menu-category">
+            <div class="category-title">Heißgetränke</div>
+            <div class="menu-item"><span>Cappuccino</span> <span class="price">3,40€</span></div>
+            <div class="menu-item"><span>Flat White</span> <span class="price">3,80€</span></div>
+            <div class="menu-item"><span>Türkischer Mocha</span> <span class="price">2,80€</span></div>
+        </div>
+        <div class="menu-category">
+            <div class="category-title">Toast</div>
+            <div class="menu-item"><span>Käse Toast</span> <span class="price">4,80€</span></div>
+            <div class="menu-item"><span>Sucuk Käse Toast</span> <span class="price">5,40€</span></div>
+        </div>
+    </section>
+
+    <script>function toggleMenu() { var overlay = document.getElementById('nav-overlay'); overlay.style.display = (overlay.style.display === 'flex') ? 'none' : 'flex'; }</script>
+</body>
+</html>
