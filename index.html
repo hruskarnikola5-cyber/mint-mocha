@@ -28,7 +28,7 @@
         .close-menu { position: absolute; top: 25px; right: 25px; font-size: 30px; cursor: pointer; }
 
         /* --- HERO --- */
-        .hero-img-container { width: 100%; height: 70vh; background: #e0e0e0 url('hero.jpg') center/cover no-repeat; margin-bottom: 40px; }
+        .hero-img-container { width: 100%; height: 70vh; background: #e0e0e0 url('macha bild.JPG') center/cover no-repeat; margin-bottom: 40px; }
         .hero-text { padding: 0 25px; text-align: center; margin-bottom: 60px; }
         .hero-text h1 { font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 400; text-transform: uppercase; margin-bottom: 15px; letter-spacing: -1px; }
 
@@ -39,16 +39,22 @@
         .btn-text { display: inline-block; margin-top: 20px; font-size: 12px; font-weight: 600; text-transform: uppercase; border-bottom: 1px solid; text-decoration: none; color: inherit; transition: 0.3s; }
         .btn-text:hover { color: var(--mint-soft); border-color: var(--mint-soft); }
 
-        /* --- THE 3 SYMBOLS (Vektor-Icons) --- */
+        /* --- THE 3 SYMBOLS (Emojs in perfekter Größe) --- */
         .symbol-row { display: flex; justify-content: space-around; padding: 50px 0; text-align: center; gap: 15px; }
         .symbol-item { flex: 1; display: flex; flex-direction: column; align-items: center; }
-        .symbol-icon { width: 40px; height: 40px; margin-bottom: 15px; fill: var(--mocha-deep); opacity: 0.8; }
+        /* Emoji Größe auf 40px gesetzt, wie gewünscht */
+        .symbol-icon { font-size: 40px; margin-bottom: 15px; display: block; }
         .symbol-item span { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; opacity: 0.7; }
 
-        /* --- REZENSIONEN (Die 2 Besten) --- */
+        /* --- REZENSIONEN (Mit cleanem Link) --- */
         .review-section { background-color: #f1ede4; }
-        .review-box { background: white; padding: 30px; border-radius: 4px; margin-bottom: 20px; box-shadow: 0 5px 25px rgba(0,0,0,0.02); max-width: 600px; margin-left: auto; margin-right: auto; }
-        .review-box p { font-size: 14px; line-height: 1.8; opacity: 0.9; }
+        .review-box { background: white; padding: 30px; border-radius: 4px; margin-bottom: 20px; box-shadow: 0 5px 25px rgba(0,0,0,0.02); max-width: 600px; margin-left: auto; margin-right: auto; text-align: center;}
+        .review-box p { font-size: 14px; line-height: 1.8; opacity: 0.9; text-align: left;}
+        
+        /* Neuer Stil für den Rezensions-Button: Cleaner Strich */
+        .review-btn-container { text-align: center; margin-top: 30px; }
+        .review-btn { display: inline-block; font-size: 12px; font-weight: 600; text-transform: uppercase; text-decoration: none; color: inherit; border-bottom: 1px solid; transition: 0.3s; }
+        .review-btn:hover { color: var(--mint-soft); border-color: var(--mint-soft); }
 
         /* --- MAP --- */
         .map-container { width: 100%; height: 350px; border-radius: 4px; overflow: hidden; margin-top: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); border: 1px solid #eee; }
@@ -99,15 +105,15 @@
 
         <div class="symbol-row">
             <div class="symbol-item">
-                <svg class="symbol-icon" viewBox="0 0 24 24"><path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z"/></svg>
+                <span class="symbol-icon">🏠</span>
                 <span>Family owned</span>
             </div>
             <div class="symbol-item">
-                <svg class="symbol-icon" viewBox="0 0 24 24"><path d="M2 13h16a3 3 0 0 1 3 3v2a3 3 0 0 1-3 3H2a3 3 0 0 1-3-3v-2a3 3 0 0 1 3-3zm12-9c1-1 3-2 3 0s-2 3-3 3c-1 0-3-1-3-3s2-2 3-2z"/></svg>
+                <span class="symbol-icon">🍵</span>
                 <span>Premium Quality</span>
             </div>
             <div class="symbol-item">
-                <svg class="symbol-icon" viewBox="0 0 24 24"><path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6-4.8-6 4.8 2.4-7.2-6-4.8h7.6z"/></svg>
+                <span class="symbol-icon">✨</span>
                 <span>Cozy Space</span>
             </div>
         </div>
@@ -121,14 +127,16 @@
         <div class="review-box">
             <p><strong>Haya:</strong> "Familiäre Atmosphäre, mega nettes Team. Der Mango Matcha war super! 10/10 🌿"</p>
         </div>
-        <a href="rezensionen.html" class="btn-text" style="display: block; text-align: center; margin-top: 30px;">Alle Rezensionen</a>
+        <div class="review-btn-container">
+            <a href="rezensionen.html" class="review-btn">Alle Rezensionen</a>
+        </div>
     </section>
 
     <section style="background-color: white;">
         <h2>Find us in Wolfenbüttel</h2>
         <p style="text-align: center; font-size: 14px; margin-bottom: 20px; opacity: 0.6;">Okerstraße 3, 38300 Wolfenbüttel</p>
         <div class="map-container">
-            <iframe src="http://googleusercontent.com/maps.google.com/3" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="http://googleusercontent.com/maps.google.com/4" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </section>
 
