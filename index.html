@@ -17,45 +17,52 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-warm); color: var(--mocha-deep); }
 
-        /* --- NAVIGATION & OVERLAY --- */
+        /* --- NAVIGATION --- */
         .announcement { background-color: #f1ede4; text-align: center; padding: 10px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; }
-        
         header { position: sticky; top: 0; background: var(--glass); backdrop-filter: blur(10px); display: flex; justify-content: space-between; align-items: center; padding: 15px 25px; z-index: 1000; border-bottom: 1px solid rgba(0,0,0,0.05); }
         .logo { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; text-decoration: none; color: inherit; }
-        
         .menu-icon { font-size: 24px; cursor: pointer; }
-        
-        /* Das Overlay Menü */
-        #nav-overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: var(--bg-warm); z-index: 2000;
-            display: none; flex-direction: column; align-items: center; justify-content: center;
-        }
+
+        #nav-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg-warm); z-index: 2000; display: none; flex-direction: column; align-items: center; justify-content: center; }
         #nav-overlay a { font-family: 'Playfair Display', serif; font-size: 32px; text-decoration: none; color: var(--mocha-deep); margin: 20px 0; }
         .close-menu { position: absolute; top: 25px; right: 25px; font-size: 30px; cursor: pointer; }
 
-        /* --- SECTIONS --- */
+        /* --- HERO --- */
+        .hero-img-container { width: 100%; height: 70vh; background: #e0e0e0 url('hero.jpg') center/cover no-repeat; margin-bottom: 40px; }
+        .hero-text { padding: 0 25px; text-align: center; margin-bottom: 60px; }
+        .hero-text h1 { font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 400; text-transform: uppercase; margin-bottom: 15px; }
+
+        /* --- STORY TEASER --- */
         section { padding: 60px 25px; }
-        .hero { text-align: center; padding-top: 40px; }
-        .hero h1 { font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 400; margin-bottom: 15px; text-transform: uppercase; }
-        
-        .preview-box { background: white; padding: 30px; border-radius: 5px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.02); }
-        h2 { font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 15px; text-transform: uppercase; color: var(--mint-soft); }
-        
-        .btn-link { display: inline-block; margin-top: 15px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--dusty-pink); text-decoration: none; border-bottom: 1px solid; }
+        h2 { font-family: 'Playfair Display', serif; font-size: 26px; text-align: center; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 2px; }
+        .story-box { text-align: center; max-width: 600px; margin: 0 auto; line-height: 1.8; opacity: 0.8; }
+        .btn-text { display: inline-block; margin-top: 20px; font-size: 12px; font-weight: 600; text-transform: uppercase; border-bottom: 1px solid; text-decoration: none; color: inherit; }
+
+        /* --- THE 3 SYMBOLS --- */
+        .symbol-row { display: flex; justify-content: space-around; padding: 40px 0; text-align: center; gap: 10px; }
+        .symbol-item { flex: 1; }
+        .symbol-icon { font-size: 28px; margin-bottom: 10px; display: block; }
+        .symbol-item span { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; opacity: 0.7; }
 
         /* --- MAP --- */
-        .map-container { width: 100%; height: 300px; border-radius: 10px; overflow: hidden; margin-top: 20px; }
-        iframe { width: 100%; height: 100%; border: none; filter: grayscale(0.2); }
+        .map-container { width: 100%; height: 350px; border-radius: 4px; overflow: hidden; margin-top: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        iframe { width: 100%; height: 100%; border: none; }
 
-        .social-btn { background: var(--mint-soft); color: white; text-align: center; padding: 20px; display: block; margin: 40px 0; text-decoration: none; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; border-radius: 5px; }
+        /* --- PROFESSIONAL FOOTER --- */
+        footer { background: white; padding: 80px 25px 40px; text-align: center; border-top: 1px solid #eee; }
+        .footer-insta { text-decoration: none; color: var(--mocha-deep); display: inline-flex; flex-direction: column; align-items: center; gap: 15px; margin-bottom: 50px; }
+        .insta-circle { width: 60px; height: 60px; border: 1px solid #ddd; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; transition: 0.3s; }
+        .footer-insta:hover .insta-circle { background: var(--bg-warm); border-color: var(--mint-soft); }
+        .insta-text { font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; }
+        
+        .footer-credits { font-size: 10px; opacity: 0.4; letter-spacing: 1px; line-height: 2; }
     </style>
 </head>
 <body>
 
     <div id="nav-overlay">
         <span class="close-menu" onclick="toggleMenu()">✕</span>
-        <a href="index.html" onclick="toggleMenu()">Home</a>
+        <a href="index.html">Home</a>
         <a href="menue.html">Speisekarte</a>
         <a href="rezensionen.html">Rezensionen</a>
         <a href="geschichte.html">Unsere Geschichte</a>
@@ -68,43 +75,55 @@
         <div class="menu-icon" onclick="toggleMenu()">☰</div>
     </header>
 
-    <section class="hero">
+    <div class="hero-img-container"></div>
+
+    <div class="hero-text">
         <h1>Welcome to the Ritual</h1>
-        <p>Handverlesener Matcha & cozy Vibes in Wolfenbüttel.</p>
-    </section>
+        <p>Ein Ort für Ruhe, Matcha und hausgemachte Liebe.</p>
+    </div>
 
     <section>
         <h2>Unsere Geschichte</h2>
-        <div class="preview-box">
-            <p>Vom Textil zum Matcha: Ilkim Rabia San Özdilkural hat mit 25 Jahren ihren Traum verwirklicht und ein Stück Gastro-Tradition neu belebt...</p>
-            <a href="geschichte.html" class="btn-link">Ganze Story lesen</a>
+        <div class="story-box">
+            <p>Von Textil zu Matcha: Ilkim Rabia San Özdilkural hat mit 25 Jahren ihren Traum verwirklicht und ein Stück Gastro-Tradition neu belebt...</p>
+            <a href="geschichte.html" class="btn-text">Ganze Story lesen</a>
+        </div>
+
+        <div class="symbol-row">
+            <div class="symbol-item">
+                <span class="symbol-icon">🏠</span>
+                <span>Family owned</span>
+            </div>
+            <div class="symbol-item">
+                <span class="symbol-icon">🍵</span>
+                <span>Premium Quality</span>
+            </div>
+            <div class="symbol-item">
+                <span class="symbol-icon">✨</span>
+                <span>Cozy Space</span>
+            </div>
         </div>
     </section>
 
-    <section style="background: #f1ede4;">
-        <h2>Was Gäste sagen</h2>
-        <div class="preview-box">
-            <p><strong>Diilola:</strong> "10/10 ich liebe das Gemütliche... Matcha und Kuchen sind super!"</p>
-        </div>
-        <div class="preview-box">
-            <p><strong>Haya:</strong> "Familiäre Atmosphäre, mega nettes Team. Der Mango Matcha war super! 10/10"</p>
-        </div>
-        <a href="rezensionen.html" class="btn-link">Mehr Bewertungen</a>
-    </section>
-
-    <section id="location">
-        <h2>Find us here</h2>
-        <p>Okerstraße 3, 38300 Wolfenbüttel</p>
+    <section style="background-color: white;">
+        <h2>Find us in Wolfenbüttel</h2>
+        <p style="text-align: center; font-size: 14px; margin-bottom: 20px; opacity: 0.6;">Okerstraße 3, 38300 Wolfenbüttel</p>
         <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2442.2730128038743!2d10.533306077114136!3d52.16208576239103!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a552554e26210b%3A0x6b4b455079a4055c!2sOkerstra%C3%9Fe%203%2C%2038300%20Wolfenb%C3%BCttel!5e0!3m2!1sde!2sde!4v1714420000000!5m2!1sde!2sde" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2443.432646274431!2d10.533284077227448!3d52.16281736248386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a54df668600001%3A0xc3c544d6739b8b0!2sOkerstra%C3%9Fe%203%2C%2038300%20Wolfenb%C3%BCttel!5e0!3m2!1sde!2sde!4v1714150000000!5m2!1sde!2sde" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </section>
 
-    <section>
-        <a href="https://www.instagram.com/mintundmocha?igsh=MWhpaWlreG03ZXU3MA==" class="social-btn">
-            STAY CONNECTED 📸
+    <footer>
+        <a href="https://www.instagram.com/mintundmocha?igsh=MWhpaWlreG03ZXU3MA==" class="footer-insta">
+            <div class="insta-circle">📸</div>
+            <span class="insta-text">Stay Connected</span>
         </a>
-    </section>
+        <div class="footer-credits">
+            MINT & MOCHA<br>
+            OKERSTRASSE 3, WOLFENBÜTTEL<br>
+            © 2024 ALL RIGHTS RESERVED
+        </div>
+    </footer>
 
     <script>
         function toggleMenu() {
@@ -112,6 +131,5 @@
             overlay.style.display = (overlay.style.display === 'flex') ? 'none' : 'flex';
         }
     </script>
-
 </body>
 </html>
