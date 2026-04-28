@@ -3,49 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geschichte | mint & mocha</title>
+    <title>Unsere Geschichte | mint & mocha</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
-        :root { --bg-warm: #f9f7f2; --mint-soft: #98c1b9; --mocha-deep: #3d2b1f; --dusty-pink: #c9ada7; --glass: rgba(255, 255, 255, 0.9); }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-warm); color: var(--mocha-deep); }
-        header { position: sticky; top: 0; background: var(--glass); backdrop-filter: blur(10px); display: flex; justify-content: space-between; align-items: center; padding: 15px 25px; z-index: 1000; border-bottom: 1px solid rgba(0,0,0,0.05); }
-        .logo { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; text-decoration: none; color: inherit; }
-        .menu-icon { font-size: 24px; cursor: pointer; }
-        #nav-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg-warm); z-index: 2000; display: none; flex-direction: column; align-items: center; justify-content: center; }
-        #nav-overlay a { font-family: 'Playfair Display', serif; font-size: 32px; text-decoration: none; color: var(--mocha-deep); margin: 20px 0; }
-        .close-menu { position: absolute; top: 25px; right: 25px; font-size: 30px; cursor: pointer; }
+        :root { --bg-warm: #f9f7f2; --mocha-deep: #3d2b1f; --mint-soft: #98c1b9; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-warm); color: var(--mocha-deep); line-height: 1.8; }
         
-        section { padding: 40px 25px; max-width: 600px; margin: 0 auto; }
-        h1 { font-family: 'Playfair Display', serif; font-size: 36px; margin-bottom: 10px; color: var(--mint-soft); }
-        .subtitle { font-style: italic; opacity: 0.6; margin-bottom: 30px; display: block; }
-        p { line-height: 1.8; margin-bottom: 20px; font-size: 15px; }
-        .highlight-box { background: #f1ede4; padding: 25px; border-left: 4px solid var(--mint-soft); margin: 30px 0; }
-        .update-space { border: 2px dashed #ddd; padding: 20px; text-align: center; color: #aaa; font-style: italic; margin-top: 50px; }
+        header { padding: 20px; display: flex; justify-content: space-between; align-items: center; background: white; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; text-decoration: none; color: inherit; }
+
+        .story-hero { width: 100%; height: 50vh; background: #ddd url('geschichte.jpg') center/cover no-repeat; }
+        
+        .content { padding: 60px 25px; max-width: 700px; margin: 0 auto; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 36px; margin-bottom: 30px; }
+        p { margin-bottom: 25px; opacity: 0.8; }
+        
+        .highlight-text { font-family: 'Playfair Display', serif; font-style: italic; font-size: 20px; color: var(--mint-soft); border-left: 2px solid; padding-left: 20px; margin: 40px 0; }
+        
+        .back-btn { display: inline-block; margin-top: 40px; text-decoration: none; color: inherit; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
     </style>
 </head>
 <body>
-    <div id="nav-overlay"><span class="close-menu" onclick="toggleMenu()">✕</span><a href="index.html">Home</a><a href="menue.html">Speisekarte</a><a href="rezensionen.html">Rezensionen</a><a href="geschichte.html">Unsere Geschichte</a></div>
-    <header><a href="index.html" class="logo">mint & mocha</a><div class="menu-icon" onclick="toggleMenu()">☰</div></header>
 
-    <section>
+    <header>
+        <a href="index.html" class="logo">mint & mocha</a>
+        <a href="index.html" style="text-decoration:none; color:inherit;">✕</a>
+    </header>
+
+    <div class="story-hero"></div>
+
+    <div class="content">
         <h1>Von Textil zu Matcha</h1>
-        <span class="subtitle">Wie ein Familienprojekt das Café-Leben in Wolfenbüttel bereichert.</span>
+        <p>„Die Leidenschaft für die Gastro erbt man“: Ilkim Rabia San Özdilkural hat mit 25 Jahren ihren Traum verwirklicht. In den Räumen eines ehemaligen Textilgeschäfts in der Wolfenbütteler Innenstadt ist nun ein moderner, ästhetischer Rückzugsort entstanden.</p>
         
-        <p>Die Leidenschaft für die Gastronomie wurde Inhaberin Ilkim Rabia San Özdilkural quasi in die Wiege gelegt. In einer Gastrofamilie aufgewachsen, war es schon immer ihr Traum, einen eigenen ästhetischen Raum zu schaffen.</p>
-        
-        <div class="highlight-box">
-            "Die Leidenschaft für die Gastro erbt man." 
-            <br>— Ilkim Rabia San Özdilkural
+        <div class="highlight-text">
+            "Ein Familienprojekt mit Herz und einer Prise Matcha."
         </div>
 
-        <p>Mit 25 Jahren übernahm sie das ehemalige Café Mocha und verwandelte es zusammen mit ihrer Mutter in einen "Minty Space". Hier trifft Vintage-Charme auf moderne Matcha-Kultur. Jedes Detail, von den selbstgebackenen Kuchen bis zum Interior, trägt die Handschrift der Familie.</p>
+        <p>Zusammen mit ihrer Mutter sorgt Ilkim für täglich selbstgebackene Kuchen und wechselnde warme Gerichte am Mittag. Es geht nicht nur um Kaffee – es geht um das Gefühl, nach Hause zu kommen.</p>
+        
+        <p style="opacity: 0.4; font-style: italic; margin-top: 60px;">
+            Unsere Geschichte wird jeden Tag weitergeschrieben. Bleib gespannt auf neue Kapitel, Events und Kreationen...
+        </p>
 
-        <div class="update-space">
-            Hier entsteht bald noch mehr... Wir planen Events und neue Specials für euch! ✨
-        </div>
-    </section>
+        <a href="index.html" class="back-btn">← Zurück zur Übersicht</a>
+    </div>
 
-    <script>function toggleMenu() { var overlay = document.getElementById('nav-overlay'); overlay.style.display = (overlay.style.display === 'flex') ? 'none' : 'flex'; }</script>
 </body>
 </html>
