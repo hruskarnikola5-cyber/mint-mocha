@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rezensionen | mint & mocha</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg-warm: #f9f7f2; --mint-soft: #98c1b9; --mocha-deep: #3d2b1f; --dusty-pink: #c9ada7; --glass: rgba(255, 255, 255, 0.9); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-warm); color: var(--mocha-deep); }
+        header { position: sticky; top: 0; background: var(--glass); backdrop-filter: blur(10px); display: flex; justify-content: space-between; align-items: center; padding: 15px 25px; z-index: 1000; border-bottom: 1px solid rgba(0,0,0,0.05); }
+        .logo { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; text-decoration: none; color: inherit; }
+        .menu-icon { font-size: 24px; cursor: pointer; }
+        #nav-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg-warm); z-index: 2000; display: none; flex-direction: column; align-items: center; justify-content: center; }
+        #nav-overlay a { font-family: 'Playfair Display', serif; font-size: 32px; text-decoration: none; color: var(--mocha-deep); margin: 20px 0; }
+        .close-menu { position: absolute; top: 25px; right: 25px; font-size: 30px; cursor: pointer; }
+        
+        section { padding: 40px 25px; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 36px; margin-bottom: 30px; text-align: center; color: var(--mint-soft); }
+        .review-card { background: white; padding: 25px; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.02); }
+        .stars { color: #f2b01e; margin-bottom: 10px; }
+        .user { font-weight: 600; font-size: 14px; display: block; margin-bottom: 5px; }
+        .text { font-size: 14px; line-height: 1.6; opacity: 0.8; }
+    </style>
+</head>
+<body>
+    <div id="nav-overlay"><span class="close-menu" onclick="toggleMenu()">✕</span><a href="index.html">Home</a><a href="menue.html">Speisekarte</a><a href="rezensionen.html">Rezensionen</a><a href="geschichte.html">Unsere Geschichte</a></div>
+    <header><a href="index.html" class="logo">mint & mocha</a><div class="menu-icon" onclick="toggleMenu()">☰</div></header>
+
+    <section>
+        <h1>Eure Erlebnisse</h1>
+        <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <span class="user">Diilola</span>
+            <p class="text">"Super freundliches Personal, leckeres Essen und die Kuchen 😍 Matcha und Cafés 10/10. Ich liebe das Gemütliche!"</p>
+        </div>
+        <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <span class="user">k</span>
+            <p class="text">"Mega gemütliches Café mit richtig gutem Kaffee und super nettem Service! Die Atmosphäre ist entspannt..."</p>
+        </div>
+        <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <span class="user">Haya</span>
+            <p class="text">"Familiäre Atmosphäre, mega nettes Team, perfekte Lage – und der Mango Matcha war einfach super 😍 10/10!"</p>
+        </div>
+        <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <span class="user">The Rubbertramp</span>
+            <p class="text">"Hier kann man schön in der Sonne sitzen und Kaffee trinken ;) Super netter Service!"</p>
+        </div>
+    </section>
+
+    <script>function toggleMenu() { var overlay = document.getElementById('nav-overlay'); overlay.style.display = (overlay.style.display === 'flex') ? 'none' : 'flex'; }</script>
+</body>
+</html>
