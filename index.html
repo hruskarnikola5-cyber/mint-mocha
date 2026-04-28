@@ -11,259 +11,107 @@
             --mint-soft: #98c1b9;
             --mocha-deep: #3d2b1f;
             --dusty-pink: #c9ada7;
-            --glass-white: rgba(255, 255, 255, 0.8);
+            --glass: rgba(255, 255, 255, 0.9);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-warm); color: var(--mocha-deep); }
 
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--bg-warm);
-            color: var(--mocha-deep);
-            -webkit-font-smoothing: antialiased;
+        /* --- NAVIGATION & OVERLAY --- */
+        .announcement { background-color: #f1ede4; text-align: center; padding: 10px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; }
+        
+        header { position: sticky; top: 0; background: var(--glass); backdrop-filter: blur(10px); display: flex; justify-content: space-between; align-items: center; padding: 15px 25px; z-index: 1000; border-bottom: 1px solid rgba(0,0,0,0.05); }
+        .logo { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; text-decoration: none; color: inherit; }
+        
+        .menu-icon { font-size: 24px; cursor: pointer; }
+        
+        /* Das Overlay Menü */
+        #nav-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: var(--bg-warm); z-index: 2000;
+            display: none; flex-direction: column; align-items: center; justify-content: center;
         }
+        #nav-overlay a { font-family: 'Playfair Display', serif; font-size: 32px; text-decoration: none; color: var(--mocha-deep); margin: 20px 0; }
+        .close-menu { position: absolute; top: 25px; right: 25px; font-size: 30px; cursor: pointer; }
 
-        /* --- ANNOUNCEMENT BAR --- */
-        .announcement {
-            background-color: #f1ede4;
-            text-align: center;
-            padding: 8px;
-            font-size: 11px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            font-weight: 600;
-        }
+        /* --- SECTIONS --- */
+        section { padding: 60px 25px; }
+        .hero { text-align: center; padding-top: 40px; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 400; margin-bottom: 15px; text-transform: uppercase; }
+        
+        .preview-box { background: white; padding: 30px; border-radius: 5px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.02); }
+        h2 { font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 15px; text-transform: uppercase; color: var(--mint-soft); }
+        
+        .btn-link { display: inline-block; margin-top: 15px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--dusty-pink); text-decoration: none; border-bottom: 1px solid; }
 
-        /* --- HEADER --- */
-        header {
-            position: sticky;
-            top: 0;
-            background: var(--glass-white);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 25px;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-        }
+        /* --- MAP --- */
+        .map-container { width: 100%; height: 300px; border-radius: 10px; overflow: hidden; margin-top: 20px; }
+        iframe { width: 100%; height: 100%; border: none; filter: grayscale(0.2); }
 
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 24px;
-            font-weight: 700;
-            letter-spacing: -1px;
-        }
-
-        .nav-icons { display: flex; gap: 20px; font-size: 18px; }
-
-        /* --- HERO SECTION --- */
-        .hero {
-            padding: 40px 25px;
-            text-align: center;
-        }
-
-        .hero-img {
-            width: 100%;
-            height: 450px;
-            background: url('HIER_BILD_URL') center/cover no-repeat;
-            border-radius: 2px;
-            margin-bottom: 30px;
-            background-color: #e0e0e0; /* Platzhalter */
-        }
-
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 42px;
-            font-weight: 400;
-            line-height: 1.1;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-        }
-
-        /* --- BENEFITS (Die Icons wie im Beispiel) --- */
-        .benefits {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 40px;
-            padding: 60px 25px;
-            background: #fff;
-        }
-
-        .benefit-item {
-            text-align: center;
-            max-width: 250px;
-        }
-
-        .benefit-icon {
-            width: 50px;
-            height: 50px;
-            background: #f1ede4;
-            border-radius: 50%;
-            margin: 0 auto 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-        }
-
-        .benefit-item h3 {
-            font-size: 12px;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            margin-bottom: 8px;
-        }
-
-        /* --- CONTENT SECTION --- */
-        .content-block {
-            padding: 80px 25px;
-        }
-
-        .content-block h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 32px;
-            color: var(--mint-soft);
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
-
-        .content-block p {
-            font-size: 16px;
-            line-height: 1.8;
-            opacity: 0.8;
-            margin-bottom: 30px;
-        }
-
-        /* --- BUTTONS --- */
-        .btn-primary {
-            display: inline-block;
-            background: var(--dusty-pink);
-            color: white;
-            padding: 15px 40px;
-            text-decoration: none;
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        /* --- INSTAGRAM / FOOTER --- */
-        .footer-logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 40px;
-            text-align: center;
-            padding: 60px 0 20px;
-            opacity: 0.5;
-        }
-
-        .footer-nav {
-            border-top: 1px solid #ddd;
-            padding: 40px 25px;
-        }
-
-        .footer-link {
-            display: flex;
-            justify-content: space-between;
-            padding: 15px 0;
-            border-bottom: 1px solid #eee;
-            text-decoration: none;
-            color: inherit;
-            font-size: 14px;
-            text-transform: uppercase;
-        }
-
-        .social-btn {
-            background: #fff;
-            color: var(--mocha-deep);
-            border: 1px solid #eee;
-            text-align: center;
-            padding: 20px;
-            display: block;
-            margin: 40px 25px;
-            text-decoration: none;
-            font-weight: 600;
-            letter-spacing: 1px;
-        }
-
-        /* Mobile specific row for images */
-        .image-row {
-            display: flex;
-            gap: 10px;
-            overflow-x: auto;
-            padding: 0 25px;
-            scrollbar-width: none;
-        }
-
-        .img-card {
-            min-width: 250px;
-            height: 300px;
-            background-color: #ddd;
-        }
+        .social-btn { background: var(--mint-soft); color: white; text-align: center; padding: 20px; display: block; margin: 40px 0; text-decoration: none; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; border-radius: 5px; }
     </style>
 </head>
 <body>
 
+    <div id="nav-overlay">
+        <span class="close-menu" onclick="toggleMenu()">✕</span>
+        <a href="index.html" onclick="toggleMenu()">Home</a>
+        <a href="menue.html">Speisekarte</a>
+        <a href="rezensionen.html">Rezensionen</a>
+        <a href="geschichte.html">Unsere Geschichte</a>
+    </div>
+
     <div class="announcement">MINTY SPACE, COZY TASTE. 🍵</div>
 
     <header>
-        <div class="logo">mint & mocha</div>
-        <div class="nav-icons">
-            <span>📍</span>
-            <span>☰</span>
-        </div>
+        <a href="index.html" class="logo">mint & mocha</a>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
     </header>
 
     <section class="hero">
-        <div class="hero-img"></div> <h1>Welcome to the Ritual</h1>
-        <p>Dein Rückzugsort in Wolfenbüttel für handverlesenen Matcha und feinste Kaffeespezialitäten.</p>
+        <h1>Welcome to the Ritual</h1>
+        <p>Handverlesener Matcha & cozy Vibes in Wolfenbüttel.</p>
     </section>
 
-    <section class="benefits">
-        <div class="benefit-item">
-            <div class="benefit-icon">🌿</div>
-            <h3>Pure Qualität</h3>
-            <p style="font-size: 11px; opacity: 0.6;">Höchste Matcha-Güte für deinen Fokus.</p>
-        </div>
-        <div class="benefit-item">
-            <div class="benefit-icon">✨</div>
-            <h3>Cozy Vibes</h3>
-            <p style="font-size: 11px; opacity: 0.6;">Ein Raum zum Durchatmen und Genießen.</p>
-        </div>
-        <div class="benefit-item">
-            <div class="benefit-icon">🍰</div>
-            <h3>Homemade</h3>
-            <p style="font-size: 11px; opacity: 0.6;">Täglich frische Kreationen aus unserer Backstube.</p>
+    <section>
+        <h2>Unsere Geschichte</h2>
+        <div class="preview-box">
+            <p>Vom Textil zum Matcha: Ilkim Rabia San Özdilkural hat mit 25 Jahren ihren Traum verwirklicht und ein Stück Gastro-Tradition neu belebt...</p>
+            <a href="geschichte.html" class="btn-link">Ganze Story lesen</a>
         </div>
     </section>
 
-    <section class="content-block">
-        <h2>Come catch a drink!</h2>
-        <p>Komm vorbei und erlebe Matcha pur. Genieße leckere Kreationen und entdecke ständig wechselnde Specials, die perfekt auf jede Jahreszeit abgestimmt sind.</p>
-        <a href="https://maps.google.com/?q=Okerstraße+3,Wolfenbüttel" class="btn-primary">Auf Karte ansehen</a>
+    <section style="background: #f1ede4;">
+        <h2>Was Gäste sagen</h2>
+        <div class="preview-box">
+            <p><strong>Diilola:</strong> "10/10 ich liebe das Gemütliche... Matcha und Kuchen sind super!"</p>
+        </div>
+        <div class="preview-box">
+            <p><strong>Haya:</strong> "Familiäre Atmosphäre, mega nettes Team. Der Mango Matcha war super! 10/10"</p>
+        </div>
+        <a href="rezensionen.html" class="btn-link">Mehr Bewertungen</a>
     </section>
 
-    <div class="image-row">
-        <div class="img-card" style="background: url('BILD_1') center/cover;"></div>
-        <div class="img-card" style="background: url('BILD_2') center/cover;"></div>
+    <section id="location">
+        <h2>Find us here</h2>
+        <p>Okerstraße 3, 38300 Wolfenbüttel</p>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2442.2730128038743!2d10.533306077114136!3d52.16208576239103!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a552554e26210b%3A0x6b4b455079a4055c!2sOkerstra%C3%9Fe%203%2C%2038300%20Wolfenb%C3%BCttel!5e0!3m2!1sde!2sde!4v1714420000000!5m2!1sde!2sde" allowfullscreen="" loading="lazy"></iframe>
+        </div>
     </section>
 
-    <div class="footer-logo">mint & mocha</div>
+    <section>
+        <a href="https://www.instagram.com/mintundmocha?igsh=MWhpaWlreG03ZXU3MA==" class="social-btn">
+            STAY CONNECTED 📸
+        </a>
+    </section>
 
-    <div class="footer-nav">
-        <a href="#" class="footer-link">Produkte <span>+</span></a>
-        <a href="#" class="footer-link">Unser Space <span>+</span></a>
-        <a href="#" class="footer-link">Rechtliches <span>+</span></a>
-    </div>
-
-    <a href="https://www.instagram.com/mintundmocha?igsh=MWhpaWlreG03ZXU3MA==" class="social-btn">
-        STAY CONNECTED 📸
-    </a>
-
-    <p style="text-align: center; font-size: 10px; opacity: 0.4; padding-bottom: 40px;">
-        © 2024 mint & mocha. All rights reserved.
-    </p>
+    <script>
+        function toggleMenu() {
+            var overlay = document.getElementById('nav-overlay');
+            overlay.style.display = (overlay.style.display === 'flex') ? 'none' : 'flex';
+        }
+    </script>
 
 </body>
 </html>
