@@ -6,29 +6,52 @@
     <title>Unsere Geschichte | mint & mocha</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
-        :root { --bg-warm: #f9f7f2; --mocha-deep: #3d2b1f; --mint-soft: #98c1b9; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-warm); color: var(--mocha-deep); line-height: 1.8; }
-        
-        header { padding: 20px; display: flex; justify-content: space-between; align-items: center; background: white; }
-        .logo { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; text-decoration: none; color: inherit; }
+        :root {
+            --bg-warm: #f9f7f2;
+            --mint-soft: #98c1b9;
+            --mocha-deep: #3d2b1f;
+            --dusty-pink: #c9ada7;
+            --glass: rgba(255, 255, 255, 0.9);
+        }
 
-        .story-hero { width: 100%; height: 50vh; background: #ddd url('mint & mocha fam bild.webp') center/cover no-repeat; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-warm); color: var(--mocha-deep); -webkit-font-smoothing: antialiased; }
+
+        /* --- NAVIGATION (Konsistent zur Hauptseite) --- */
+        header { position: sticky; top: 0; background: var(--glass); backdrop-filter: blur(10px); display: flex; justify-content: space-between; align-items: center; padding: 15px 25px; z-index: 1000; border-bottom: 1px solid rgba(0,0,0,0.05); }
+        .logo { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; text-decoration: none; color: inherit; }
+        .menu-icon { font-size: 24px; cursor: pointer; }
+
+        /* Overlay Menü */
+        #nav-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg-warm); z-index: 2000; display: none; flex-direction: column; align-items: center; justify-content: center; }
+        #nav-overlay a { font-family: 'Playfair Display', serif; font-size: 32px; text-decoration: none; color: var(--mocha-deep); margin: 20px 0; }
+        .close-menu { position: absolute; top: 25px; right: 25px; font-size: 30px; cursor: pointer; }
+
+        /* --- UNTERSEITE SPEZIFISCH --- */
+        .story-hero { width: 100%; height: 50vh; background: #ddd url('geschichte.jpg') center/cover no-repeat; margin-bottom: 40px; }
         
-        .content { padding: 60px 25px; max-width: 700px; margin: 0 auto; }
-        h1 { font-family: 'Playfair Display', serif; font-size: 36px; margin-bottom: 30px; }
-        p { margin-bottom: 25px; opacity: 0.8; }
+        .content { padding: 0 25px 80px; max-width: 700px; margin: 0 auto; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 36px; margin-bottom: 30px; font-weight: 400; text-transform: uppercase; letter-spacing: -1px; }
+        p { margin-bottom: 25px; opacity: 0.8; line-height: 1.8; }
         
         .highlight-text { font-family: 'Playfair Display', serif; font-style: italic; font-size: 20px; color: var(--mint-soft); border-left: 2px solid; padding-left: 20px; margin: 40px 0; }
         
-        .back-btn { display: inline-block; margin-top: 40px; text-decoration: none; color: inherit; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+        .credits { text-align: center; font-size: 10px; opacity: 0.4; letter-spacing: 1px; line-height: 2; text-transform: uppercase; margin-top: 60px; padding-top: 40px; border-top: 1px solid #eee;}
     </style>
 </head>
 <body>
 
+    <div id="nav-overlay">
+        <span class="close-menu" onclick="toggleMenu()">✕</span>
+        <a href="index.html">Home</a>
+        <a href="menue.html">Speisekarte</a>
+        <a href="rezensionen.html">Rezensionen</a>
+        <a href="geschichte.html">Unsere Geschichte</a>
+    </div>
+
     <header>
         <a href="index.html" class="logo">mint & mocha</a>
-        <a href="index.html" style="text-decoration:none; color:inherit;">✕</a>
-    </header>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div> </header>
 
     <div class="story-hero"></div>
 
@@ -46,8 +69,21 @@
             Unsere Geschichte wird jeden Tag weitergeschrieben. Bleib gespannt auf neue Kapitel, Events und Kreationen...
         </p>
 
-        <a href="index.html" class="back-btn">← Zurück zur Übersicht</a>
+        <div class="credits">
+            MINT & MOCHA<br>
+            OKERSTRASSE 3, WOLFENBÜTTEL
+        </div>
     </div>
 
+    <script>
+        function toggleMenu() {
+            var overlay = document.getElementById('nav-overlay');
+            if (overlay.style.display === 'flex') {
+                overlay.style.display = 'none';
+            } else {
+                overlay.style.display = 'flex';
+            }
+        }
+    </script>
 </body>
 </html>
