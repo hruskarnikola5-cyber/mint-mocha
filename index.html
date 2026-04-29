@@ -10,76 +10,69 @@
             --bg-warm: #f9f7f2;
             --mint-soft: #98c1b9;
             --mocha-deep: #3d2b1f;
-            --dusty-pink: #c9ada7;
             --glass: rgba(255, 255, 255, 0.9);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-warm); color: var(--mocha-deep); -webkit-font-smoothing: antialiased; }
 
+        /* --- NAVIGATION --- */
         .announcement { background-color: #f1ede4; text-align: center; padding: 10px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; }
-        
         header { position: sticky; top: 0; background: var(--glass); backdrop-filter: blur(10px); display: flex; justify-content: space-between; align-items: center; padding: 15px 25px; z-index: 1000; border-bottom: 1px solid rgba(0,0,0,0.05); }
         
         .logo-wrapper { display: flex; align-items: center; text-decoration: none; color: inherit; gap: 15px; }
-        
-        /* --- LOGO VERGRÖSSERT UND GEGEN KARIERTES MUSTER GESCHÜTZT --- */
-        .header-logo { 
-            height: 60px; /* Grösser */
-            width: 60px;
-            object-fit: cover;
-            border-radius: 50%; /* Kreisförmig schneiden, um Ecken zu entfernen */
-            background-color: white; /* Weißer Hintergrund, falls Image nicht transparent ist */
-            padding: 2px; /* Kleiner Rand für Eleganz */
-            border: 1px solid rgba(0,0,0,0.05); /* Dezente Linie */
-        } 
-        .logo-text { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; letter-spacing: -1px; }
+        .header-logo { height: 65px; width: 65px; object-fit: cover; border-radius: 50%; background-color: white; border: 1px solid rgba(0,0,0,0.05); } 
+        .logo-text { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; }
         
         .menu-icon { font-size: 28px; cursor: pointer; }
 
+        /* --- HERO --- */
+        .hero-img-container { width: 100%; height: 70vh; background: #e0e0e0 url('macha bild.JPG') center/cover no-repeat; margin-bottom: 40px; }
+        .hero-text { padding: 0 25px; text-align: center; margin-bottom: 60px; }
+        .hero-text h1 { font-family: 'Playfair Display', serif; font-size: 42px; text-transform: uppercase; }
+
+        /* --- DIE 3 SYMBOLE (Riesig & Unübersehbar) --- */
+        .symbol-row { 
+            display: flex; 
+            justify-content: space-around; 
+            padding: 120px 0; 
+            text-align: center; 
+            align-items: center;
+        }
+        .symbol-item { flex: 1; }
+        .symbol-icon { 
+            font-size: 280px !important; /* EXTREM GROSS */
+            display: block; 
+            line-height: 1; 
+            margin-bottom: 20px;
+        } 
+        .symbol-item span { font-size: 12px; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; opacity: 0.7; }
+
+        /* --- REZENSIONEN --- */
+        .review-section { background-color: #f1ede4; padding: 80px 25px; }
+        .review-box { background: white; padding: 35px; border-radius: 4px; margin-bottom: 20px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .review-btn-container { text-align: center; margin-top: 30px; }
+        .review-btn { display: inline-block; font-size: 12px; font-weight: 600; text-transform: uppercase; text-decoration: none; color: inherit; border-bottom: 1px solid; }
+
+        /* --- MAP --- */
+        .map-container { width: 100%; height: 450px; border-radius: 4px; overflow: hidden; margin-top: 20px; border: 1px solid #eee; }
+        iframe { width: 100%; height: 100%; border: none; }
+
+        /* --- FOOTER --- */
+        footer { background: white; padding: 100px 25px 50px; text-align: center; border-top: 1px solid #eee; }
+        .footer-insta { text-decoration: none; color: var(--mocha-deep); display: inline-flex; flex-direction: column; align-items: center; gap: 15px; }
+        .insta-circle { width: 70px; height: 70px; border: 1px solid #ddd; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .insta-icon { width: 30px; height: 30px; fill: var(--mocha-deep); }
+
+        /* Overlay Menü */
         #nav-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg-warm); z-index: 2000; display: none; flex-direction: column; align-items: center; justify-content: center; }
         #nav-overlay a { font-family: 'Playfair Display', serif; font-size: 32px; text-decoration: none; color: var(--mocha-deep); margin: 20px 0; }
         .close-menu { position: absolute; top: 25px; right: 25px; font-size: 30px; cursor: pointer; }
 
-        .hero-img-container { width: 100%; height: 70vh; background: #e0e0e0 url('hero.jpg') center/cover no-repeat; margin-bottom: 40px; }
-        .hero-text { padding: 0 25px; text-align: center; margin-bottom: 60px; }
-        .hero-text h1 { font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 400; text-transform: uppercase; margin-bottom: 15px; letter-spacing: -2px; line-height: 1.1; }
-        .hero-text p { opacity: 0.7; font-size: 18px; }
-
-        section { padding: 80px 25px; }
-        h2 { font-family: 'Playfair Display', serif; font-size: 28px; text-align: center; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 2px; color: var(--mocha-deep); }
-        .text-box { text-align: center; max-width: 600px; margin: 0 auto; line-height: 1.9; opacity: 0.8; font-size: 16px; }
-        .btn-text { display: inline-block; margin-top: 30px; font-size: 13px; font-weight: 600; text-transform: uppercase; border-bottom: 1px solid; text-decoration: none; color: inherit; transition: 0.3s; }
-        .btn-text:hover { color: var(--mint-soft); border-color: var(--mint-soft); }
-
-        /* --- THE 3 SYMBOLS (JETZT EXTREM GROSS) --- */
-        .symbol-row { display: flex; justify-content: space-around; padding: 100px 0; text-align: center; gap: 20px; align-items: center;}
-        .symbol-item { flex: 1; display: flex; flex-direction: column; align-items: center; }
-        .symbol-icon { font-size: 240px; margin-bottom: 30px; display: block; line-height: 1; } /* Dreifach so groß */
-        .symbol-item span { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; opacity: 0.7; }
-
-        .review-section { background-color: #f1ede4; }
-        .review-box { background: white; padding: 40px; border-radius: 4px; margin-bottom: 25px; box-shadow: 0 5px 25px rgba(0,0,0,0.02); max-width: 600px; margin-left: auto; margin-right: auto; }
-        .review-box p { font-size: 15px; line-height: 1.8; opacity: 0.9; }
-
-        .map-container { width: 100%; height: 450px; border-radius: 4px; overflow: hidden; margin-top: 30px; border: 1px solid #eee; box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
-        iframe { width: 100%; height: 100%; border: none; }
-
-        footer { background: white; padding: 100px 25px 50px; text-align: center; border-top: 1px solid #eee; }
-        .footer-insta { text-decoration: none; color: var(--mocha-deep); display: inline-flex; flex-direction: column; align-items: center; gap: 15px; margin-bottom: 60px; }
-        .insta-circle { width: 70px; height: 70px; border: 1px solid #ddd; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: 0.3s; }
-        .insta-icon { width: 30px; height: 30px; fill: var(--mocha-deep); transition: 0.3s; }
-        .footer-insta:hover .insta-circle { background: var(--bg-warm); border-color: var(--mint-soft); }
-        .footer-insta:hover .insta-icon { fill: var(--mint-soft); }
-        .insta-text { font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-top: 5px; }
-        .footer-credits { font-size: 10px; opacity: 0.4; letter-spacing: 1px; line-height: 2; text-transform: uppercase; }
-
-        /* Handy-Optimierung, damit die riesigen Emojis den Bildschirm nicht sprengen */
+        /* Mobile Fix für die Riesen-Emojis */
         @media (max-width: 600px) {
-            .hero-text h1 { font-size: 36px; }
-            .symbol-icon { font-size: 150px; } /* Immer noch groß, aber passt aufs Handy */
-            .logo-text { font-size: 18px; }
-            .header-logo { height: 50px; width: 50px; }
+            .symbol-icon { font-size: 140px !important; }
+            .symbol-row { padding: 60px 0; }
         }
     </style>
 </head>
@@ -96,7 +89,7 @@
     <div class="announcement">MINTY SPACE, COZY TASTE. 🍵</div>
     <header>
         <a href="index.html" class="logo-wrapper">
-            <img src="mintLogo.png" alt="mint & mocha logo" class="header-logo">
+            <img src="mintLogo (1).png" alt="logo" class="header-logo">
             <span class="logo-text">mint & mocha</span>
         </a>
         <div class="menu-icon" onclick="toggleMenu()">☰</div>
@@ -106,55 +99,39 @@
 
     <div class="hero-text">
         <h1>Welcome to the Ritual</h1>
-        <p>Dein ästhetischer Rückzugsort für Matcha & Specialty Coffee in Wolfenbüttel.</p>
     </div>
 
     <section>
-        <h2>Unsere Geschichte</h2>
-        <div class="text-box">
-            <p>Vom Textil zum Matcha: Ilkim Rabia San Özdilkural hat mit 25 Jahren ihren Traum verwirklicht und ein Stück Gastro-Tradition neu belebt...</p>
-            <a href="geschichte.html" class="btn-text">Ganze Story lesen</a>
+        <div style="text-align: center; max-width: 600px; margin: 0 auto; line-height: 1.8; opacity: 0.8;">
+            <h2>Unsere Geschichte</h2>
+            <p>Vom Textil zum Matcha: Ilkim Rabia San Özdilkural hat mit 25 Jahren ihren Traum verwirklicht...</p>
+            <a href="geschichte.html" style="display:inline-block; margin-top:20px; font-size:12px; font-weight:600; text-transform:uppercase; border-bottom:1px solid; text-decoration:none; color:inherit;">Ganze Story lesen</a>
         </div>
 
         <div class="symbol-row">
-            <div class="symbol-item">
-                <span class="symbol-icon">🏠</span>
-                <span>Family owned</span>
-            </div>
-            <div class="symbol-item">
-                <span class="symbol-icon">🍵</span>
-                <span>Premium Quality</span>
-            </div>
-            <div class="symbol-item">
-                <span class="symbol-icon">✨</span>
-                <span>Cozy Space</span>
-            </div>
+            <div class="symbol-item"><span class="symbol-icon">🏠</span><span>Family owned</span></div>
+            <div class="symbol-item"><span class="symbol-icon">🍵</span><span>Premium Quality</span></div>
+            <div class="symbol-item"><span class="symbol-icon">✨</span><span>Cozy Space</span></div>
         </div>
     </section>
 
     <section class="review-section">
         <h2>Was Gäste sagen</h2>
-        <div class="review-box">
-            <p><strong>Diilola:</strong> "10/10 ich liebe das Gemütliche... Matcha und Kuchen sind super! ✨"</p>
-        </div>
-        <div class="review-box">
-            <p><strong>Haya:</strong> "Familiäre Atmosphäre, mega nettes Team. Der Mango Matcha war super! 10/10 🌿"</p>
-        </div>
-        <div class="review-btn-container" style="text-align: center;">
-            <a href="rezensionen.html" class="review-btn btn-text">Alle Rezensionen</a>
-        </div>
+        <div class="review-box"><p><strong>Diilola:</strong> "10/10 ich liebe das Gemütliche... Matcha und Kuchen sind super! ✨"</p></div>
+        <div class="review-box"><p><strong>Haya:</strong> "Familiäre Atmosphäre, mega nettes Team. Der Mango Matcha war super! 10/10 🌿"</p></div>
+        <div class="review-btn-container"><a href="rezensionen.html" class="review-btn">Alle Rezensionen</a></div>
     </section>
 
     <section style="background-color: white;">
-        <h2>Find us in Wolfenbüttel</h2>
-        <p style="text-align: center; font-size: 14px; opacity: 0.6;">Okerstraße 3, 38300 Wolfenbüttel</p>
+        <h2>Find us here</h2>
+        <p style="text-align: center; font-size: 14px; opacity: 0.6; margin-bottom: 20px;">Okerstraße 3, 38300 Wolfenbüttel</p>
         <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2441.748375837648!2d10.534888277209724!3d52.16173257196621!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a56108151f158d%3A0x286392576b51c1be!2sOkerstra%C3%9Fe%203%2C%2038300%20Wolfenb%C3%BCttel!5e0!3m2!1sde!2sde!4v1714343114948!5m2!1sde!2sde" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2458.115804363294!2d10.533722576885374!3d52.16335196230489!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a5491753f40f09%3A0xc3f8373412351296!2sOkerstra%C3%9Fe%203%2C%2038300%20Wolfenb%C3%BCttel!5e0!3m2!1sde!2sde!4v1714574000000!5m2!1sde!2sde" allowfullscreen="" loading="lazy"></iframe>
         </div>
         <div style="text-align: center; margin-top: 40px; border-top: 1px solid #eee; padding-top: 30px; max-width: 300px; margin-left: auto; margin-right: auto;">
-            <h3 style="font-size: 12px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; color: var(--dusty-pink);">Öffnungszeiten</h3>
-            <p style="font-size: 16px; font-weight: 600; margin-bottom: 5px;">Dienstag bis Samstag</p>
-            <p style="font-size: 16px; opacity: 0.8; font-weight: 300;">10:30 – 17:00 Uhr</p>
+            <h3 style="font-size: 11px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px;">Öffnungszeiten</h3>
+            <p style="font-size: 16px; font-weight: 600;">Dienstag bis Samstag</p>
+            <p style="font-size: 16px; opacity: 0.8;">10:30 – 17:00 Uhr</p>
         </div>
     </section>
 
@@ -165,7 +142,6 @@
             </div>
             <span class="insta-text">Stay Connected</span>
         </a>
-        <div class="footer-credits">MINT & MOCHA<br>OKERSTRASSE 3, WOLFENBÜTTEL<br>© 2024 ALL RIGHTS RESERVED</div>
     </footer>
 
     <script>
