@@ -21,43 +21,30 @@
         .announcement { background-color: #f1ede4; text-align: center; padding: 10px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; }
         header { position: sticky; top: 0; background: var(--glass); backdrop-filter: blur(10px); display: flex; justify-content: space-between; align-items: center; padding: 10px 25px; z-index: 1000; border-bottom: 1px solid rgba(0,0,0,0.05); }
         
-        .logo-wrapper { display: flex; align-items: center; text-decoration: none; color: inherit; gap: 20px; }
+        .logo-wrapper { display: flex; align-items: center; text-decoration: none; color: inherit; gap: 15px; }
         
-        /* --- LOGO UPDATES: Größer, ohne Kreis --- */
+        /* --- LOGO: Ein Tick kleiner --- */
         .header-logo { 
-            height: 95px; /* Vergrößert */
+            height: 75px; /* Von 95px auf 75px verkleinert */
             width: auto;
             object-fit: contain;
-            border-radius: 0; /* Kreis entfernt */
-            /* Beibehaltung des weißen Hintergrunds, falls die Datei immer noch karierte Ecken hat */
             background-color: white; 
         } 
-        .logo-text { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; letter-spacing: -1px; }
+        .logo-text { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; letter-spacing: -1px; }
         
         .menu-icon { font-size: 28px; cursor: pointer; }
 
         /* --- HERO --- */
-        .hero-img-container { width: 100%; height: 70vh; background: #e0e0e0 url('hero.jpg') center/cover no-repeat; margin-bottom: 40px; }
+        .hero-img-container { width: 100%; height: 70vh; background: #e0e0e0 url('macha bild.JPG') center/cover no-repeat; margin-bottom: 40px; }
         .hero-text { padding: 0 25px; text-align: center; margin-bottom: 60px; }
         .hero-text h1 { font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 400; text-transform: uppercase; margin-bottom: 15px; letter-spacing: -1px; line-height: 1.1; }
 
-        /* --- THE 3 SYMBOLS (Jetzt stimmig und kleiner) --- */
-        .symbol-row { 
-            display: flex; 
-            justify-content: space-around; 
-            padding: 80px 0; /* Reduzierter Abstand, da Emojis kleiner sind */
-            text-align: center; 
-            align-items: center;
-            gap: 40px;
-        }
-        .symbol-item { flex: 1; display: flex; flex-direction: column; align-items: center; }
-        .symbol-icon { 
-            font-size: 70px; /* Stimmige Größe */
-            display: block; 
-            line-height: 1; 
-            margin-bottom: 20px;
-        } 
-        .symbol-item span { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; opacity: 0.7; }
+        /* --- SECTIONS --- */
+        section { padding: 60px 25px; }
+        h2 { font-family: 'Playfair Display', serif; font-size: 26px; text-align: center; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 2px; color: var(--mocha-deep); }
+        .text-box { text-align: center; max-width: 600px; margin: 0 auto; line-height: 1.9; opacity: 0.8; font-size: 16px; }
+        .btn-text { display: inline-block; margin-top: 30px; font-size: 13px; font-weight: 600; text-transform: uppercase; border-bottom: 1px solid; text-decoration: none; color: inherit; transition: 0.3s; }
+        .btn-text:hover { color: var(--mint-soft); border-color: var(--mint-soft); }
 
         /* --- REZENSIONEN --- */
         .review-section { background-color: #f1ede4; padding: 80px 25px; }
@@ -84,9 +71,8 @@
 
         /* Handy-Optimierung */
         @media (max-width: 600px) {
-            .symbol-icon { font-size: 60px; }
-            .symbol-row { padding: 60px 0; }
-            .header-logo { height: 70px; }
+            .hero-text h1 { font-size: 36px; }
+            .header-logo { height: 60px; }
         }
     </style>
 </head>
@@ -103,7 +89,7 @@
     <div class="announcement">MINTY SPACE, COZY TASTE. 🍵</div>
     <header>
         <a href="index.html" class="logo-wrapper">
-            <img src="mintLogo.png" alt="logo" class="header-logo">
+            <img src="mintLogo (1).png" alt="logo" class="header-logo">
             <span class="logo-text">mint & mocha</span>
         </a>
         <div class="menu-icon" onclick="toggleMenu()">☰</div>
@@ -118,34 +104,30 @@
     <section>
         <div style="text-align: center; max-width: 600px; margin: 0 auto; line-height: 1.8; opacity: 0.8;">
             <h2>Unsere Geschichte</h2>
-            <p>Vom Textil zum Matcha: Ilkim Rabia San Özdilkural hat mit 25 Jahren ihren Traum verwirklicht...</p>
-            <a href="geschichte.html" style="display:inline-block; margin-top:20px; font-size:12px; font-weight:600; text-transform:uppercase; border-bottom:1px solid; text-decoration:none; color:inherit;">Ganze Story lesen</a>
+            <p>Vom Textil zum Matcha: Ilkim Rabia San Özdilkural hat mit 25 Jahren ihren Traum verwirklicht und ein Stück Gastro-Tradition neu belebt...</p>
+            <a href="geschichte.html" class="btn-text">Ganze Story lesen</a>
         </div>
-
-        <div class="symbol-row">
-            <div class="symbol-item"><span class="symbol-icon">🏠</span><span>Family owned</span></div>
-            <div class="symbol-item"><span class="symbol-icon">🍵</span><span>Premium Quality</span></div>
-            <div class="symbol-item"><span class="symbol-icon">✨</span><span>Cozy Space</span></div>
-        </div>
-    </section>
+        </section>
 
     <section class="review-section">
         <h2>Was Gäste sagen</h2>
         <div class="review-box"><p><strong>Diilola:</strong> "10/10 ich liebe das Gemütliche... Matcha und Kuchen sind super! ✨"</p></div>
         <div class="review-box"><p><strong>Haya:</strong> "Familiäre Atmosphäre, mega nettes Team. Der Mango Matcha war super! 10/10 🌿"</p></div>
-        <div class="review-btn-container"><a href="rezensionen.html" class="review-btn">Alle Rezensionen</a></div>
+        <div class="review-btn-container" style="text-align: center;">
+            <a href="rezensionen.html" class="review-btn btn-text">Alle Rezensionen</a>
+        </div>
     </section>
 
     <section style="background-color: white;">
         <h2>Find us here</h2>
         <p style="text-align: center; font-size: 14px; opacity: 0.6; margin-bottom: 20px;">Okerstraße 3, 38300 Wolfenbüttel</p>
         <div class="map-container">
-            <iframe src="https://maps.google.com/maps?q=Okerstra%C3%9Fe%203%2C%2038300%20Wolfenb%C3%BCttel&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2446.5293233816654!2d10.534889277028163!3d52.16111326260714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a5697669f6e1f9%3A0x6b4c10c1f6f194e8!2sOkerstra%C3%9Fe%203%2C%2038300%20Wolfenb%C3%BCttel!5e0!3m2!1sde!2sde!4v1714390000000!5m2!1sde!2sde" allowfullscreen="" loading="lazy"></iframe>
         </div>
         <div style="text-align: center; margin-top: 40px; border-top: 1px solid #eee; padding-top: 30px; max-width: 300px; margin-left: auto; margin-right: auto;">
-            <h3 style="font-size: 11px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px;">Öffnungszeiten</h3>
-            <p style="font-size: 16px; font-weight: 600;">Dienstag bis Samstag</p>
-            <p style="font-size: 16px; opacity: 0.8;">10:30 – 17:00 Uhr</p>
+            <h3 style="font-size: 11px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; color: var(--dusty-pink);">Öffnungszeiten</h3>
+            <p style="font-size: 16px; font-weight: 600; margin-bottom: 5px;">Dienstag bis Samstag</p>
+            <p style="font-size: 16px; opacity: 0.8; font-weight: 300;">10:30 – 17:00 Uhr</p>
         </div>
     </section>
 
