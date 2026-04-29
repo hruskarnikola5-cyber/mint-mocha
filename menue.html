@@ -10,25 +10,44 @@
             --bg-warm: #f9f7f2;
             --mint-soft: #98c1b9;
             --mocha-deep: #3d2b1f;
-            --dusty-pink: #c9ada7;
             --glass: rgba(255, 255, 255, 0.9);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-warm); color: var(--mocha-deep); -webkit-font-smoothing: antialiased; }
 
-        /* --- NAVIGATION (Identisch mit index.html & geschichte.html) --- */
-        .announcement { background-color: #f1ede4; text-align: center; padding: 10px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; }
+        /* --- NAVIGATION (Schlicht wie bei Geschichte/Rezensionen) --- */
+        header { 
+            position: sticky; 
+            top: 0; 
+            background: var(--glass); 
+            backdrop-filter: blur(10px); 
+            -webkit-backdrop-filter: blur(10px);
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 20px 25px; 
+            z-index: 1000; 
+            border-bottom: 1px solid rgba(0,0,0,0.05); 
+        }
         
-        header { position: sticky; top: 0; background: var(--glass); backdrop-filter: blur(10px); display: flex; justify-content: space-between; align-items: center; padding: 10px 25px; z-index: 1000; border-bottom: 1px solid rgba(0,0,0,0.05); }
+        .logo { 
+            font-family: 'Playfair Display', serif; 
+            font-size: 22px; 
+            font-weight: 700; 
+            text-decoration: none; 
+            color: inherit; 
+            letter-spacing: -0.5px;
+        }
         
-        .logo-wrapper { display: flex; align-items: center; text-decoration: none; color: inherit; gap: 15px; }
-        .header-logo { height: 75px; width: auto; object-fit: contain; background-color: white; } 
-        .logo-text { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; letter-spacing: -1px; }
-        
-        .menu-icon { font-size: 28px; cursor: pointer; }
+        .menu-icon { font-size: 24px; cursor: pointer; }
 
-        #nav-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg-warm); z-index: 2000; display: none; flex-direction: column; align-items: center; justify-content: center; }
+        /* Overlay Menü */
+        #nav-overlay { 
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+            background: var(--bg-warm); z-index: 2000; 
+            display: none; flex-direction: column; align-items: center; justify-content: center; 
+        }
         #nav-overlay a { font-family: 'Playfair Display', serif; font-size: 32px; text-decoration: none; color: var(--mocha-deep); margin: 20px 0; }
         .close-menu { position: absolute; top: 25px; right: 25px; font-size: 30px; cursor: pointer; }
 
@@ -49,8 +68,8 @@
         .highlight-box { background: white; padding: 25px; border-radius: 4px; border: 1px dashed var(--mint-soft); margin-top: 40px; text-align: center; }
         .highlight-box p { font-weight: 600; color: var(--mint-soft); text-transform: uppercase; font-size: 12px; letter-spacing: 1px; }
 
-        footer { background: white; padding: 60px 25px; text-align: center; border-top: 1px solid #eee; margin-top: 50px; }
-        .footer-credits { font-size: 10px; opacity: 0.4; letter-spacing: 1px; text-transform: uppercase; }
+        footer { padding: 60px 25px; text-align: center; border-top: 1px solid #eee; margin-top: 50px; opacity: 0.4; }
+        .footer-credits { font-size: 10px; letter-spacing: 1px; text-transform: uppercase; line-height: 2; }
     </style>
 </head>
 <body>
@@ -63,13 +82,8 @@
         <a href="geschichte.html">Unsere Geschichte</a>
     </div>
 
-    <div class="announcement">MINTY SPACE, COZY TASTE. 🍵</div>
-    
     <header>
-        <a href="index.html" class="logo-wrapper">
-            <img src="mintLogo.png" alt="logo" class="header-logo">
-            <span class="logo-text">mint & mocha</span>
-        </a>
+        <a href="index.html" class="logo">mint & mocha</a>
         <div class="menu-icon" onclick="toggleMenu()">☰</div>
     </header>
 
@@ -146,7 +160,11 @@
     <script>
         function toggleMenu() {
             var overlay = document.getElementById('nav-overlay');
-            overlay.style.display = (overlay.style.display === 'flex') ? 'none' : 'flex';
+            if (overlay.style.display === 'flex') {
+                overlay.style.display = 'none';
+            } else {
+                overlay.style.display = 'flex';
+            }
         }
     </script>
 </body>
